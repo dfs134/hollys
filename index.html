@@ -26,7 +26,7 @@
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
       $(document).ready(function(){
-        $('.slider').bxSlider({control:false});});
+        $('.slider').bxSlider({mode:'fade',responsive:false,controls:false,auto:true,pause:2500});});
     </script>
   
   
@@ -43,7 +43,7 @@
         body{font-family:'Noto Sans KR';}
         .eng{font-family:'Roboto';}
         .grid940{width:940px; margin:0 auto;}
-
+        /* 헤더 */
         .header{border-bottom:2px solid #ba000c; padding-top:22px;}
         .header_top{margin-bottom:10px;}
         .header_top>div{float:left;}
@@ -62,15 +62,44 @@
         .header_bottom>ul>li:hover{background-color:#ba000c;} 
         .header_bottom>ul>li>a{font-weight:bolder; font-size:19px; color:#333333; transition:0.5s;}
         .header_bottom>ul>li:hover>a{color:#ffffff;}
-
-        
-        
+        /* 베너 */
         .bx-wrapper .bx-controls-direction a{display:none;}
         .bx-wrapper .bx-pager{bottom:32px;}
-
-
+        .main_banner .bx-wrapper{-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none;border: none; background:transparent}
+        .main_banner .bx-wrapper .bx-pager{bottom:32px;}
+        .main_banner .bx-wrapper .bx-pager.bx-default-pager a{background-color:#cccccc;width:16px; height:16px; margin-left:8.5px; margin-right:8.5px; border-radius:8px;}        
+        .main_banner .bx-wrapper .bx-pager.bx-default-pager a:hover,
+        .main_banner .bx-wrapper .bx-pager.bx-default-pager a.active,
+        .main_banner .bx-wrapper .bx-pager.bx-default-pager a:focus {background-color:#ba000c;}
+        .main_banner{margin-bottom:46px;}
+        /* 섹션2 */
+        .fra_mall_store{margin-bottom:22px;}
+        .fra,.mall,.store{float:left; width:230px; margin-right:10px; position:relative;}
+        .mall{width:460px;}
+        .store{margin-right:0;}
+        .fra>.fra_tit,.fra>.fra_txt,.mall>.mall_tit,.mall>.mall_txt,.store>.store_tit,.store>.store_txt{position:absolute; left:22px;}
+        .fra>.fra_tit,.mall>.mall_tit,.store>.store_tit{top:18px;}
+        .fra>.fra_txt,.mall>.mall_txt,.store>.store_txt{top:48px;}
         
+        .fra_mall_store h2{font-family:'roboto'; font-weight:900px; font-size:24px; color:#333333}
+        .fra_txt p,.mall_txt p,.store_txt p{font-size: 14px; line-height:21px;color:#666666;}
+
+        .mall h2{color:#ba000c;}
+        .mall_list_item{padding-top:96px;}
+        .mall_list_item{float: left;}
+        .mall_list_item p{font-weight:100px; font-size:14px; line-height:21px; color:#333333; text-align:center;}
         
+        /* 섹션3 */
+        .banner01{float:left;}
+        .banner02{float:right;}
+
+        /* 노티스 */
+        .notice>div>div{float:left; width:24.20212765957447%; margin-right:10px;}
+        .notice>div>div:last-child{margin-right:0;}
+        
+       
+        
+  
 
     </style>
 
@@ -127,12 +156,163 @@
                 <div><img src="./imeages/mainBanner_05.jpg" alt="banner05"></div>
             </div>
         </section>
+        <!-- 세션2 -->
+        <section class="sec02 fra_mall_store">
+            <div class="grid940 clearfix">
+                <!-- 프렌차이즈 -->
+                <div class="fra">
+                    <div class="fra_tit">   
+                        <h2><i class="fa fa-cc-paypal" aria-hidden="true"></i> Franchise</h2>
+                    </div>
+                    <div class="fra_txt">
+                        <p>가맹문의</p>
+                    </div>
+                    <div class="fra_img">
+                        <img src="./imeages/menu_img01_03.jpg" alt="" class="src">
+                    </div>
+                </div>
+                <!-- 몰 -->
+                <div class="mall">
+                    <div class="mall_tit">
+                        <h2><i class="fa fa-credit-card-alt" aria-hidden="true"></i> HOLLYS Mall</h2>
+                    </div>
+                    <div class="mall_txt">
+                        <p>할리스커피의 다양한 상품들은 온라인에서도 만나보세요.</p>
+                    </div>
+                    <div class="mall_list">
+                        <ul class="clearfix">
+                            <li class="mall_list_item">
+                                <ul>
+                                    <li>
+                                        <img src="./imeages/mall_img01.png" alt="이미지1" class="src">
+                                    </li>
+                                    <li>
+                                        <p>할리스X몰티져스<br>초코빙수</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mall_list_item">
+                                <ul>
+                                    <li>
+                                        <img src="./imeages/mall_img02.png" alt="이미지2" class="src">
+                                    </li>
+                                    <li>
+                                        <p>망고 치즈케잌 빙수</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mall_list_item">
+                                <ul>
+                                    <li>
+                                        <img src="./imeages/mall_img03.png" alt="이미지3" class="src">
+                                    </li>
+                                    <li>
+                                        <p>딸기 치즈케잌 빙수</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 스토어 -->
+                <div class="store">
+                    <div class="store_tit">   
+                        <h2><i class="fa fa-cc-paypal" aria-hidden="true"></i> Store</h2>
+                    </div>
+                    <div class="store_txt">
+                        <p>전국에 있는 할리스 매장을 찾아드립니다.</p>
+                    </div>
+                    <div class="store_img">
+                        <img src="./imeages/store_img01_05.jpg" alt="" class="src">
+                    </div>
+                </div>             
+            </div>
+        </section>
+        <!-- 섹션3 -->
+        <section class="sec03 banner">
+            <div class="grid940 clearfix">
+                <div class="banner01">
+                    <a href="#">
+                        <img src="./imeages/banner_mem.jpg" alt="" class="src">
+                    </a>                   
+                </div>
+                <div class="banner02">
+                    <a href="#">
+                        <img src="./imeages/banner_gift.jpg" alt="" class="src">
+                    </a>   
+                </div>
+            </div>
+        </section>
+        <!-- 노티스 -->
+        <section class="sec04 notice">
+            <div class="grid940 clearfix">
+                <div>
+                    <div class="notice_tit">
+                        <h2><i class="fa fa-pencil" aria-hidden="true"></i> Coffe Academy</h2>
+                    </div>
+                    <div class="notice txt">
+                        <p>할리스커피 아카데미와 함께하는 즐거운<br>커피 여행!</p>
+                    </div>
+                    <div class="notice quick">
+                        <p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 바로가기</p>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div class="notice_tit">
+                        <h2><i class="fa fa-shopping-bag" aria-hidden="true"></i></i> HOLLYS B2B Solution</h2>
+                    </div>
+                    <div class="notice txt">
+                        <p>할리스 F&B는 20년의 커피 노하우를<br>기반으로 한 할리스 B2B 솔루션을<br> 소개합니다.</p>  
+                    </div>
+                    <div class="notice quick">
+                        <p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 바로가기</p>
+                    </div>
+                </div>
 
-        <section class="sec02 fra_mall_store"><section</section>
-
-        <section class="sec03 banner"></section>
-
-        <section class="sec04 notice"></section>
+                
+                <div>
+                    <div class="notice_tit">
+                        <h2><i class="fa fa-volume-down" aria-hidden="true"></i></i> News <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></h2>
+                    </div>
+                    <div class="notice txt">
+                        <ul>
+                            <li class="clearfix">
+                                <div><p>코로나 예방을 위한....</p></div>
+                                <div><p>2020-06-30</p>
+                            </div>
+                            </li>
+                            <li class="clearfix">
+                                <div><p>2020년 여름 신제품....</p></div>
+                                <div><p>2020-05-23</p></div>
+                            </li>
+                            <li class="clearfix">
+                                <div><p>2020할인 안내....</p></div>
+                                <div>2020-04-13</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                    
+                
+                <div>
+                    <div>
+                        <div class="etc_imgs clearfix">
+                            <div class="etc_img"><img src="./imeages/img_etc01.gif" alt="etc01"></div>
+                            <div class="etc_img"><img src="./imeages/img_etc02.gif" alt="etc02"></div>
+                            <div class="etc_img"><img src="/imeages/img_etc03.gif" alt="etc03"></div>
+                        </div>
+                        <div class="etc txt clearfix">
+                            <p>창업안내</p>
+                            <p>아카데미 강좌</p>
+                            <p>고객문의</p>
+                        </div>
+                    </div>
+                </div>   
+                
+            </div>
+        </section>
 
         <section class="sec05 sns"></section>
 
